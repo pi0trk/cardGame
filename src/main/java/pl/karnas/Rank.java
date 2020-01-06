@@ -33,6 +33,6 @@ enum Rank {
 
     @Override
     public String toString() {
-        return rankName;
+        return rankValue+"";
     }
 }

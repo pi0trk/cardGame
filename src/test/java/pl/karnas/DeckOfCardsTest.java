@@ -9,6 +9,6 @@ public class DeckOfCardsTest {
     @Test
     public void testShuffledDeckShouldReturn52Cards() {
         DeckOfCards deck = new DeckOfCards();
-        assertEquals(deck.deck().size(), 52   );
+        assertEquals(deck.cards.size(), 52   );
     }
 }

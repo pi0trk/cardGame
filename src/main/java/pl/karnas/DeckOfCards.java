@@ -12,7 +12,7 @@ class DeckOfCards {
     private final Suit[] suits = {DIAMONDS, CLUBS, HEARTS, SPADES};
     private final Rank[] ranks = {DEUCE, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE};
 
-    List<Card> deck() {
+    private List<Card> deck() {
         List<Card> cards = new ArrayList<>();
         for (int i = 0; i < 52; i++) {
             Suit suit = suits[i / 13];
@@ -23,17 +23,15 @@ class DeckOfCards {
         return cards;
     }
 
-    public void dealCard(Player player) {
-        Card removedCard = deck().remove(1);
-        player.getHand().add(removedCard);
+    List<Card> cards = deck();
+
+    Card dealCard() {
+        if (cards.isEmpty()) return null;
+        return cards.remove(0);
     }
 
-    public Card dealCard(int i) {
-        return deck().remove(i);
-    }
-
-    public int getSizeOfDeck() {
-        return deck().size();
+    int getSizeOfDeck() {
+        return cards.size();
     }
 
 }
